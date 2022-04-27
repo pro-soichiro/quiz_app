@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  root to: "users#index"
   resources :categories
   resources :questions, shallow: true do
     resource :choices
@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     get :answer, on: :collection
   end
   resources :users
+  
 end

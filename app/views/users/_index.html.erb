@@ -1,0 +1,10 @@
+<% users.each do |user| %>
+  <p>
+    ユーザー名:<%= user.name %>
+    メールアドレス:<%= user.email %>
+    管理者権限:<%= user.admin %>
+    <%= link_to "詳細",user_path(user) %>
+    <%= link_to "編集",edit_user_path(user) %>
+    <%= link_to "削除",user_path(user),method: :delete, data: {confirm: "ユーザーを削除してよろしいですか？"} %>
+  </p>
+<% end %>
